@@ -1,5 +1,8 @@
+const express = require("express");
+const app = express();
 const mongoose = require("mongoose");
 const { string, number } = require("zod/v4");
+app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(
