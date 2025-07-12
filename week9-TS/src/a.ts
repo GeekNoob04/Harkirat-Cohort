@@ -33,16 +33,6 @@ isLegal({
 */ // this is voilating the DRY rule
 // instead:
 
-interface User {
-    firstName: string;
-    lastName: string;
-    age: number;
-    email?: string;
-}
-function isLegal(user: User) {
-    return user.age > 18 ? true : false;
-}
-
 isLegal({
     firstName: "Harshit",
     lastName: "Budhraja",
@@ -67,3 +57,38 @@ class Employee implements Person {
         console.log(`${phrase} ${this.name}`);
     }
 }
+
+interface User {
+    firstName: string;
+    lastName: string;
+    age: number;
+    email?: string;
+}
+function isLegal(user: User) {
+    return user.age > 18 ? true : false;
+}
+type User1 = {
+    firstName: string;
+    lastName: string;
+    age: number;
+};
+
+type printIdArgs = number | string;
+function printId(id: printIdArgs) {}
+
+type Employeee = {
+    username: string;
+    password: string;
+};
+
+type Manager = {
+    phone: number;
+    age: number;
+};
+type Techlead = Employeee & Manager;
+const lead: Techlead = {
+    username: "harshit",
+    password: "ihcio",
+    age: 20,
+    phone: 81238979818,
+};
