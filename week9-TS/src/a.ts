@@ -92,3 +92,33 @@ const lead: Techlead = {
     age: 20,
     phone: 81238979818,
 };
+
+// step-8 arrays
+type numArray = number[];
+function maxValue(arr: numArray) {
+    let maxi = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > maxi) {
+            maxi = arr[i];
+        }
+        return maxi;
+    }
+}
+const ans = maxValue([1, 2, 3]);
+console.log(ans);
+
+interface User {
+    firstName: string;
+    lastName: string;
+    age: number;
+}
+function filterAge(users: User[]) {
+    return users.filter((user) => user.age > 18);
+}
+const myage = filterAge([
+    {
+        firstName: "Harshit",
+        lastName: "Budhraja",
+        age: 20,
+    },
+]);
