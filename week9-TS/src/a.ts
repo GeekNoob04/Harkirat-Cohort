@@ -147,19 +147,19 @@ doSmth(KeyInput.Up);
 doSmth(KeyInput.Right);
 doSmth(KeyInput.Left);
 // enum in express
-// const express = require("express");
-// const app = express();
+import express from "express";
+const app = express();
 
-// enum statusCodes {
-//     Success = 200,
-//     NotFound = 404,
-//     Error = 500,
-// }
-// app.get("/", (req, res) => {
-//     res.status(statusCodes.Success).json({
-//         msg: "Sucessfull",
-//     });
-// });
+enum statusCodes {
+    Success = 200,
+    NotFound = 404,
+    Error = 500,
+}
+app.get("/", (req, res) => {
+    res.status(statusCodes.Success).json({
+        msg: "Sucessfull",
+    });
+});
 
 // step-10 Generics
 function maxFirst<T>(arr: T[]) {
@@ -169,3 +169,6 @@ const result = maxFirst(["Harshit", "Budhraja"]);
 const result2 = maxFirst<number>([1, 2, 3]);
 const result3 = maxFirst<boolean>([true, false]);
 console.log(result.toUpperCase());
+console.log(result2);
+console.log(result3);
+
