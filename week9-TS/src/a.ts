@@ -122,3 +122,41 @@ const myage = filterAge([
         age: 20,
     },
 ]);
+
+// ENUMS
+enum KeyInput {
+    Up = 1,
+    Down,
+    Left,
+    Right,
+}
+function doSmth(keyPressed: KeyInput) {
+    if (keyPressed == KeyInput.Up) {
+        console.log("UP");
+    } else if (keyPressed == KeyInput.Down) {
+        console.log("Down");
+    } else if (keyPressed == KeyInput.Right) {
+        console.log("Right");
+    } else if (keyPressed == KeyInput.Left) {
+        console.log("Left");
+    }
+}
+
+doSmth(KeyInput.Down);
+doSmth(KeyInput.Up);
+doSmth(KeyInput.Right);
+doSmth(KeyInput.Left);
+
+const express = require("express");
+const app = express();
+
+enum statusCodes {
+    Success = 200,
+    NotFound = 404,
+    Error = 500,
+}
+app.get("/", (req, res) => {
+    res.status(statusCodes.Success).json({
+        msg: "Sucessfull",
+    });
+});
