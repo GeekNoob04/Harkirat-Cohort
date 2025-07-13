@@ -172,3 +172,7 @@ console.log(result.toUpperCase());
 console.log(result2);
 console.log(result3);
 
+import adefault, { b } from "./b";
+
+console.log(adefault);
+console.log(b);
